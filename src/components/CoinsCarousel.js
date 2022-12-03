@@ -12,7 +12,7 @@ const CoinsCarousel = () => {
     const { currency, symbol } = useContext(CurrencyContext);
     const getTrendingCoins = async () => {
         const { data } = await axios.get(TrendingCoins(currency));
-        console.log(data)
+        // console.log(data)
         setTrendingCoins(data);
     }
 

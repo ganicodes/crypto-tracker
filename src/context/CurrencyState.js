@@ -4,6 +4,7 @@ import CurrencyContext from './CurrencyContext'
 const CurrencyState = ({ children }) => {
     const [currency, setCurrency] = useState("INR");
     const [symbol, setSymbol] = useState("₹");
+    const [mode, setMode] = useState("light");
 
     useEffect(() => {
         if (currency === "INR") setSymbol("₹");
@@ -12,7 +13,7 @@ const CurrencyState = ({ children }) => {
     }, [currency]);
 
     return (
-        <CurrencyContext.Provider value={{ currency, setCurrency, symbol }}>
+        <CurrencyContext.Provider value={{ currency, setCurrency, symbol, mode, setMode }}>
             {children}
         </CurrencyContext.Provider>
     )
